@@ -41,9 +41,14 @@ body{
     overflow: hidden; 
     cursor: wait;
 }
+a{
+    text-decoration: none;
+    color: var(--color-dark);
+}
 @media only screen and (max-width: 600px) {
     body {
         overflow: auto;
     }
   }
+
 
