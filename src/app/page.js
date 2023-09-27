@@ -37,13 +37,14 @@ export default function Index() {
     <main className={styles.main}>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
-      </AnimatePresence>
+        </AnimatePresence>
       <Landing />
       <Globe/>
       <Description />
       <Projects />
       <SlidingImages />
       <Contact />
+
     </main>
   )
 }
