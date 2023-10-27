@@ -8,39 +8,45 @@ import Projects from '../components/Projects';
 import Description from '../components/Description';
 import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
+import Globe from '../components/Globe'
 
-export default function Home({router}) {
 
-  const [isLoading, setIsLoading] = useState(true);
+export default function Index() {
+
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect( () => {
+    
     (
       async () => {
           const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
-
+          const locomotiveScroll = new LocomotiveScroll({
+            el: document.querySelector(".smooth-scroll"),
+            smooth: true,
+            smoothMobile:true
+          });
+          window.dispatchEvent(new Event('resize'))
           setTimeout( () => {
-            isLoading && setIsLoading(false);
+            setIsLoading(false);
             document.body.style.cursor = 'default'
             window.scrollTo(0,0);
-          }, 1700)
+          }, 2000)
       }
     )()
   }, [])
 
   return (
     <main className={styles.main}>
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode='wait'  >
         {isLoading && <Preloader />}
-      </AnimatePresence>
+        </AnimatePresence>
       <Landing />
+      <Globe/>
       <Description />
       <Projects />
       <SlidingImages />
       <Contact />
+
     </main>
   )
 }
-
-
-

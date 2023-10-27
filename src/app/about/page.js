@@ -19,9 +19,9 @@ export default function Page({title, description}) {
 
     <main data-scroll-container >
       
-
+  
         <div className={Style.about}>
-     
+        <PageLanding title={pathname}  description={"what you want?"} />
 
             <motion.div variants={slideUp} className={Style.quotewidth}>
                <Quote />

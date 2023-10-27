@@ -3,6 +3,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import Header from '../components/Header';
 
+
 //const inter = Inter({ subsets: ['latin'] })
 const myFont = localFont({ src: './fonts/KHInterferenceTRIAL-Light.woff2' })
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={myFont.className}>
       <Header />
         {children}
+ 
       </body>
     </html>
   )
