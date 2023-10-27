@@ -1,14 +1,14 @@
 'use client'
 import Image from 'next/image'
 import styles from './style.module.scss'
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect ,useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
 
 
-export default function Home() {
+export default function index() {
 
   const firstText = useRef(null);
   const secondText = useRef(null);
@@ -16,7 +16,24 @@ export default function Home() {
   let xPercent = 0;
   let direction = -1;
 
-  useLayoutEffect( () => {
+
+  const animate = () => {
+    if (slider.current != undefined) { 
+    if(xPercent < -100){
+      xPercent = 0;
+    }
+    else if(xPercent > 0){
+      xPercent = -100;
+    }
+    gsap.set(firstText.current, {xPercent: xPercent})
+    gsap.set(secondText.current, {xPercent: xPercent})
+    requestAnimationFrame(animate);
+    xPercent += 0.1 * direction;
+  }
+}
+
+
+  useEffect( () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(slider.current, {
       scrollTrigger: {
@@ -29,23 +46,12 @@ export default function Home() {
       x: "-500px",
     })
     requestAnimationFrame(animate);
+
   }, [])
 
-  const animate = () => {
-    if(xPercent < -100){
-      xPercent = 0;
-    }
-    else if(xPercent > 0){
-      xPercent = -100;
-    }
-    gsap.set(firstText.current, {xPercent: xPercent})
-    gsap.set(secondText.current, {xPercent: xPercent})
-    requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
-  }
 
   return (
-    <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
+    <motion.div variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
        <div className='background--grid'>      </div>
  
       <div className={styles.sliderContainer}>
@@ -62,7 +68,7 @@ export default function Home() {
         <p>Designer & Developer</p>
       </div>
 
-    </motion.main>
+    </motion.div>
   )
 }
 /*

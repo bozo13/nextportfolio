@@ -10,9 +10,10 @@ import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
 import Globe from '../components/Globe'
 
+
 export default function Index() {
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect( () => {
     (
@@ -35,7 +36,7 @@ export default function Index() {
 
   return (
     <main className={styles.main}>
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode='wait'  >
         {isLoading && <Preloader />}
         </AnimatePresence>
       <Landing />

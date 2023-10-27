@@ -1,11 +1,6 @@
 'use client'
-import Image from 'next/image'
 import styles from './style.module.scss'
-import { useRef, useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { slideUp } from './animation';
-import { motion } from 'framer-motion';
+
 
 
 export default function PageLanding({title, description}) {
