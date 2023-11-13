@@ -4,6 +4,8 @@ import Contact from "@/components/Contact";
 import PageLanding from '@/components/PageLanding';
 import Quote from "@/components/quote";
 import Globe from '@/components/Globe'
+import ShuffleText from '@/components/ShuffleText '
+
 import { usePathname } from "next/navigation";
 import { slideUp, staggerCildren } from './animation';
 import { motion } from 'framer-motion';
@@ -18,8 +20,8 @@ export default function Page({title, description}) {
   return (
 
     <main data-scroll-container >
-      
-  
+        <ShuffleText />
+        <Globe />
         <div className={Style.about}>
         <PageLanding title={pathname}  description={"what you want?"} />
 

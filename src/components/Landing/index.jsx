@@ -53,7 +53,7 @@ export default function index() {
   return (
     <motion.div variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
        <div className='background--grid'>      </div>
- 
+    
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p ref={firstText}>GRAFIKER & FRONT END ENTWICKLER -</p>
