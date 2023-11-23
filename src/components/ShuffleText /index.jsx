@@ -1,8 +1,9 @@
 'use client';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
-const Index = () => {
-  const velocity = 50;
+const Index = ({shuffletext, link}) => {
+ const velocity = 50;
 
   const shuffleText = (element, originalText) => {
     const elementTextArray = Array.from(originalText);
@@ -30,14 +31,25 @@ const Index = () => {
   };
 
   useEffect(() => {
+    
+    const handleMouseEnter = (event) => {
+      const element = event.target;
+      shuffleText(element, element.dataset.text);
+    };
+
     const shuffleElements = document.querySelectorAll('.shuffle');
+
     shuffleElements.forEach((element) => {
       element.dataset.text = element.textContent;
       shuffleText(element, element.dataset.text);
-      element.addEventListener('mouseenter', () => {
-        shuffleText(element, element.dataset.text);
-      });
+      element.addEventListener('mouseenter', handleMouseEnter);
     });
+
+    return () => {
+      shuffleElements.forEach((element) => {
+        element.removeEventListener('mouseenter', handleMouseEnter);
+      });
+    };
   }, []);
 
   const shuffle = (o) => {
@@ -47,14 +59,13 @@ const Index = () => {
     }
     return o;
   };
-
   return (
-    <span className='shuffle'>
-    
 
-        asklndlknaksbdiuhaihsd.,amslkndkj
-      {/* Your HTML content where you want to apply the shuffling effect */}
-    </span>
+    <Link href={link} replace>
+      <span className='shuffle'>
+        {shuffletext}
+      </span>
+    </Link>
   );
 };
 

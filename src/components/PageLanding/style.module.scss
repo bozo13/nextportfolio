@@ -1,65 +1,57 @@
 .landing{
     position: relative;
-    display: flex;
-    height:calc(100vh - 350px);
-    overflow: hidden;
-
-
+    height: calc(35vh + 280px);
+    
+    padding: 15vh 30px 30px 30px;
     background: 
-    /*
-      conic-gradient(from 90deg at 2px 2px,var(--_g))
-      0 0/var(--s) var(--s),
-     */ 
+
       conic-gradient(from 90deg at 0.5px 0.5px,var(--_g))
       0 0/calc(var(--s)/10) calc(var(--s)/10);
 
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
     img{
       object-fit: cover;
     }
 
-    .sliderContainer{
-      position: absolute;
-      top: calc(100vh - 350px);
-    }
+    .title{
+
     
-    .slider{
-      position: relative;
-      white-space: nowrap;
-
-
-
-    }
-    
-    .slider p{
-      position: relative;
-      margin: 0px;
       color: #000;
-      font-size: 230px;
-      font-weight: 500;
-      padding-right: 50px;
-    }
-    
-    .slider p:nth-of-type(2){
-      position: absolute;
-      left: 100%;
-      top: 0;
-    }
-  
-    .description{
-      position: absolute;
-      top: 35%;
-      left: 65%;
-      color: #000;
-      font-size: 24px;
+      font-size: 55px;
       font-weight: 300;
+      margin-top: 0;
+      width: 55%;
+    
+    }
+    .description{
+  
+      width:33%;
+    
+      color: var(--color-dark);
+      font-size: 16px;
+      font-weight: 300;
+
       p{
-        margin: 0px;
-        margin-bottom: 10px;
+        margin: 0px; 
+        width: 100%;
+    
+        margin-top: 20px;
+      
       }
       svg{
         transform: scale(2);
-        margin-bottom: 100px;
+        width: 10px;
+        margin-top: 33px;
       }
     }
+  }
+
+  .shuffleTitle{
+    position: absolute;
+    top: 50%;
+    left: 30px;
   }
   

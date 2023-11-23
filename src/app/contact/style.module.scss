@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    img{
+        padding: 30px;
+        width: calc( 50vw - 60px ) ;
+        height: auto;
+    }
+}

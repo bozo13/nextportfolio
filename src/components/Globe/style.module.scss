@@ -24,7 +24,7 @@
     position: absolute;
     overflow: hidden;
     background: transparent;
-
+   z-index: 1;
     @include breakpoint(small){
         left: 35px;
     }

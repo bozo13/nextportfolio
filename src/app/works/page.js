@@ -6,7 +6,7 @@ import styles from './page.module.scss'
 
 import { useTransform, useScroll, motion } from 'framer-motion';
 import { usePathname } from "next/navigation"
-
+import ShuffleText from "@/components/ShuffleText "
 import Image from 'next/image';
 import Lenis from '@studio-freight/lenis'
 import PageLanding from "@/components/PageLanding"
@@ -28,7 +28,7 @@ const images = [
 ]
 
 
-export default function Page( {title, description}) {
+export default function Page( {title, description ,text}) {
   const pathname = usePathname()
   console.log(pathname);
   
@@ -68,16 +68,40 @@ export default function Page( {title, description}) {
 
   return (
     <main className={styles.main}>
-      <Globe />
-      <PageLanding title ={ pathname} description={"all i worked"} />
-      <div className={styles.spacer}></div>
+     
+
+      <PageLanding title ={pathname} description={"all i worked"} link={pathname}/>
+
+      <h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1>
+
+      <h1 > big</h1><h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1>
+
+      <div className={styles.spacer}>      <h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1>
+
+      <h1 > big</h1><h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1></div>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y4}/>
+        
       </div>
-      <div className={styles.spacer}></div>
+      <div className={styles.spacer}>      <h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1>
+
+      <h1 > big</h1><h1 > big</h1>
+      <h1 > big</h1>
+      <h1 > big</h1></div>
+      <Globe />
     </main>
   )
 }
@@ -99,6 +123,7 @@ const Column = ({images, y}) => {
           </div>
         })
       }
+
     </motion.div>
   )
 }
