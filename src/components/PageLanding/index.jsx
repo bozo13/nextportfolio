@@ -9,12 +9,12 @@ export default function PageLanding({title, description, link}) {
 
 
   return (
-    <div className={styles.landing} >
-      <div data-scroll data-scroll-speed={ 0.2} className={styles.title}>
+    <div className={styles.landing}  data-scroll-container>
+      <div data-scroll data-scroll-speed={0.2} className={styles.title}>
       <ShuffleText shuffletext={title} link={link} className={styles.title} />
 
       </div>
-      <div data-scroll data-scroll-speed={ 0.1} className={styles.description}>
+      <div data-scroll data-scroll-speed={0.1} className={styles.description}>
       
  
         <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">

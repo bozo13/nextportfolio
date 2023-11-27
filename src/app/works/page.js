@@ -29,6 +29,7 @@ const images = [
 
 
 export default function Page( {title, description ,text}) {
+
   const pathname = usePathname()
   console.log(pathname);
   
@@ -67,20 +68,32 @@ export default function Page( {title, description ,text}) {
   }, [])
 
   return (
-    <main className={styles.main}>
+   <>
      
 
       <PageLanding title ={pathname} description={"all i worked"} link={pathname}/>
+      
+      
+      <div className={styles.section} data-scroll-section>
+        <div  data-scroll        
+              data-scroll-direction="horizontal"
+              data-scroll-speed="3">
+          <h1 > big</h1>
+          <h1 > big</h1>
+          <h1 > big</h1>
+        </div>
+      </div>
 
-      <h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1>
 
+
+      <div data-scroll data-scroll-speed= {4}>
       <h1 > big</h1><h1 > big</h1>
       <h1 > big</h1>
       <h1 > big</h1>
+      </div>
 
-      <div className={styles.spacer}>      <h1 > big</h1>
+      <div className={styles.spacer}>      
+      <h1 > big</h1>
       <h1 > big</h1>
       <h1 > big</h1>
 
@@ -102,7 +115,8 @@ export default function Page( {title, description ,text}) {
       <h1 > big</h1>
       <h1 > big</h1></div>
       <Globe />
-    </main>
+ 
+    </>
   )
 }
 

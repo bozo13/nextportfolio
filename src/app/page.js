@@ -15,16 +15,14 @@ export default function Home(  ) {
 
 
   return (
-    <main className={styles.main}>
- 
-   
-        <Landing />   
-        <Globe /> 
-        <Description />
+    <>
+      <Landing />   
+      <Globe /> 
+      <Description />
       <Projects />
       <SlidingImages />
       <Contact />
-    </main>
+    </>
   )
 }
 

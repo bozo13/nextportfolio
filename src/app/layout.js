@@ -4,12 +4,10 @@ import './globals.css'
 import localFont from 'next/font/local'
 import Header from '../components/Header';
 import { usePathname , useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Preloader from "../components/Preloader";
 import { AnimatePresence } from 'framer-motion';
-import Lenis from '@studio-freight/lenis'
-import { useStore } from '@/lib/store'
-import { useFrame } from '@studio-freight/hamo'
+import { LenisScroller } from "../components/LenisScroller";
 
 //const inter = Inter({ subsets: ['latin'] })
 const myFont = localFont({ src: './fonts/KHInterferenceTRIAL-Light.woff2' })
@@ -22,9 +20,11 @@ export default function RootLayout({ children }) {
   const isHome = pathname === '/'
   const [isLoading, setIsLoading] = useState(isHome);
 
+
+  const refScrollContainer = React.createRef();
+/*
   const [lenis, setLenis] = useStore((state) => [state.lenis, state.setLenis])
   const router = useRouter()
-
   useEffect(() => {
     window.scrollTo(0, 0)
     const lenis = new Lenis({
@@ -44,6 +44,9 @@ export default function RootLayout({ children }) {
     }
   }, [])
 
+  */
+ // update scroll position on page refresh based on hash
+/*
   const [hash, setHash] = useState()
 
   useEffect(() => {
@@ -54,8 +57,7 @@ export default function RootLayout({ children }) {
     }
   }, [lenis, hash])
 
- // update scroll position on page refresh based on hash
-/*
+
   useEffect(() => {
    
     if (router.asPath.includes('#')) {
@@ -93,35 +95,41 @@ export default function RootLayout({ children }) {
       })
     }
   }, [])
-*/
+
   useFrame((time) => {
     lenis?.raf(time)
   }, 0)
-  /*
+
   useEffect (() => {
     if(isLoading)return
   },[isLoading])
 
-
-  useEffect( () => {
-    ( 
-      async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
-
-         setTimeout( () => {
-            document.body.style.cursor = 'default'
-            window.scrollTo(0,0);
-          }, 300)
-         
-      }
-    )()
-  }, [])
 */
+
+
+useEffect(() => {
+  let scroll;
+  import("locomotive-scroll").then((locomotiveModule) => {
+      scroll = new locomotiveModule.default({
+          el: document.querySelector("[data-scroll-container]"),
+          smooth: true,
+          smoothMobile: false,
+          resetNativeScroll: true
+      });
+  });
+
+  // `useEffect`'s cleanup phase
+  return () => {
+      if (scroll) scroll.destroy();
+  }
+});
+
+
+
   return (
     <html lang="en">
       <body className={myFont.className}> 
-
+      <main data-scroll-container >
       <AnimatePresence 
         mode='wait'
       >     
@@ -130,9 +138,10 @@ export default function RootLayout({ children }) {
       </AnimatePresence>
       <Header />
         {children} 
-
+      </main>
+   
       </body>
-    
+      <LenisScroller /> 
     </html>
    
   )
