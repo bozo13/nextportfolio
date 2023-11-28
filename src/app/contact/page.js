@@ -1,5 +1,4 @@
 "use client"
-import Globe from '@/components/Globe'
 import ShuffleText from "@/components/ShuffleText "
 import PixelatedImage from '@/components/Pixelated'
 import { usePathname } from 'next/navigation'
@@ -7,6 +6,7 @@ import PageLanding from '@/components/PageLanding'
 import Style from './style.module.scss'
 import { useRef } from 'react'
 import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
+import Footer from '@/components/Footer'
 
 export default function Page(  ) {
 
@@ -27,7 +27,6 @@ export default function Page(  ) {
       <main style={{y}} ref={container} data-scroll-container>
  
         <PageLanding title ={pathname} description={"all i worked"} link= {titlelink}/>
-        <Globe />
         <div className={Style.container}>
           {
             [...Array(7).keys()].map( (_, index) => {
@@ -35,12 +34,12 @@ export default function Page(  ) {
             })
           }
         </div>
-        <h1>title is here </h1>
-        <ShuffleText shuffletext={pathname} link = {"/"} ></ShuffleText>
-        <h1>title is here </h1>
-        <h1>title is here </h1>
-        <h1>title is here </h1>
-
+          <h1>title is here </h1>
+          <ShuffleText shuffletext={pathname} link = {"/"} ></ShuffleText>
+          <h1>title is here </h1>
+          <h1>title is here </h1>
+          <h1>title is here </h1>
+         <Footer />
         </main>
       )
   }

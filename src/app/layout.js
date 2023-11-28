@@ -121,6 +121,8 @@ useEffect(() => {
   // `useEffect`'s cleanup phase
   return () => {
       if (scroll) scroll.destroy();
+      document.body.style.cursor = 'default'
+      window.scrollTo(0,0);
   }
 });
 

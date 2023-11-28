@@ -10,7 +10,8 @@ import ShuffleText from "@/components/ShuffleText "
 import Image from 'next/image';
 import Lenis from '@studio-freight/lenis'
 import PageLanding from "@/components/PageLanding"
-import Globe from '@/components/Globe'
+import Footer from '@/components/Footer'
+
 
 const images = [
   "1.jpg",
@@ -114,7 +115,7 @@ export default function Page( {title, description ,text}) {
       <h1 > big</h1><h1 > big</h1>
       <h1 > big</h1>
       <h1 > big</h1></div>
-      <Globe />
+    <Footer />
  
     </>
   )

@@ -17,9 +17,8 @@
     height: clamp(9em, 12vw, 11em);
     background: var(--color-dark);
     border-radius: 50%;
-    top: 35%;
+    top: calc(50% + 88px);
     left: 0px;
-    margin-top: 109px;
     transform: translate(0%, 0%);
     position: absolute;
     overflow: hidden;
