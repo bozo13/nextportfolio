@@ -1,5 +1,6 @@
 "use client"
 import Style from "./style.module.scss"
+import Image from "next/image";
 import Contact from "@/components/Contact";
 import PageLanding from '@/components/PageLanding';
 import Quote from "@/components/quote";
@@ -10,7 +11,9 @@ import { useInView, motion, easeInOut,  } from 'framer-motion';
 import { slideUp, staggerCildren, slideUpText, opacity } from './animation';
 import { useRef } from "react";
 import { KHInterferenceTRIAL, KHTekaTRIALLight } from '@/lib/fonts';
-
+import Stripe from '../../../public/stripe-box.svg'
+import Smile from '../../../public/smile.svg'
+import JJ from '../../../public/JJ.svg'
 
 
 export default function Page() {
@@ -117,6 +120,15 @@ export default function Page() {
               <div className={Style.biga } data-scroll data-scroll-speed={-0.3}> ABOUT </div>
                */}
         </div>
+
+        <div className={Style.Smile}>
+                <Image 
+                 priority
+                 src={Smile}
+                 alt="double smile"/>
+              </div>
+     
+
         <div className={Style.about} >
           <div className={Style.karrierTitle } >
           <h1 >KARRIERE </h1>
@@ -151,9 +163,14 @@ export default function Page() {
             </motion.ul>
             
           </motion.div>
-
-        </div>              
-       
+        </div>      
+              <div className={Style.Stripes}>
+                <Image 
+                 priority
+                 src={Stripe}
+                 alt="stripe"/>
+              </div>
+     
         <motion.div className={Style.about} >
           <div className={Style.karrierTitle } >
             <h1 > AbsChLüssE </h1>
@@ -161,7 +178,7 @@ export default function Page() {
 
           <motion.div className={Style.karrier} ref={greeting3} >
             <motion.ul variants= {container} 
-                  animate={isInView2 ? "show" : "hidden"}  
+                  animate={isInView3 ? "show" : "hidden"}  
                   initial="hidden"
               >
               <motion.li variants={itemA}>
@@ -184,7 +201,12 @@ export default function Page() {
 
         </motion.div>              
        
-
+        <div className={Style.JJ}>
+                <Image 
+                 priority
+                 src={JJ}
+                 alt="JJ"/>
+              </div>
         <Footer/>
       </>
     )
