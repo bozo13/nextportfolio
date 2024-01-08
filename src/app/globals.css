@@ -23,12 +23,18 @@
     --section-padding: clamp(5em, 21vh, 12em);
     --container-padding: clamp(2.5em, 8vw, 8em);
     --gap-padding: clamp(1.5em, 4vw, 2.5em);
-
+    --font-base: '--KH-Inter';
+    --font-text:'--KH-Teka';
 
     --s: 100px; /* control the size */
     --counter_s: 180px; 
     --counter_g: #1C1D20 90deg,#f9f9f9 0;
     --_g: #f9f9f9 90deg,#999 0;
+
+
+      --bg-color: rgba(28, 29, 32, 1);
+      --line-color-1: rgba(255,255,255,0.13);
+      --line-color-2: rgba(255,255,255,0.05);
   }
 
 *{
@@ -37,14 +43,24 @@
 body{
     margin: 0px;
     padding: 0;
-
-    overflow: hidden; 
+    overflow: hidden;
     cursor: wait;
+    background: var(--color-light);
 }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-base);
+}
+
+
 a{
     text-decoration: none;
-    color: var(--color-dark);
+    color: white;
+    mix-blend-mode: difference;
+    font-family: var(--font-base);
 }
+
+
 @media only screen and (max-width: 600px) {
     body {
         overflow: auto;
@@ -53,12 +69,6 @@ a{
 
 
 
-
-  .shuffle{ 
-    margin-top: 100px;
-    font-size: xx-large;
-    width: 100%;
-  }
 
   html.lenis {
     height: auto;
@@ -78,4 +88,8 @@ a{
   
   .lenis.lenis-scrolling iframe {
     pointer-events: none;
+  }
+
+  .uppercase{
+    text-transform: uppercase;
   }

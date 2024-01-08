@@ -83,9 +83,11 @@ export default function index() {
                         })
                     }
                 </motion.div>
+                {/**
                 <motion.div style={{height}} className={styles.circleContainer}>
                     <div className={styles.circle}></div>
                 </motion.div>
+                 */}
         </div>
     )
 }

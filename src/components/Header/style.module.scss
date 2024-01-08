@@ -163,13 +163,15 @@
         display: flex;
         z-index: 1;
         top: 0;
-        color: #000;
+        color: #FFF;
         padding: 35px;
         justify-content: space-between;
         width: 100%;
         font-weight: 300;
         box-sizing: border-box;
         align-items: center;
+        background: black;
+        mix-blend-mode: difference;
         
         .logo{
             display: flex;

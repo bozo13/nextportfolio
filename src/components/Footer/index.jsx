@@ -8,11 +8,13 @@ export default function index() {
             
         </div>
         <div className= {Style.col}>
-            Footer
+            <p className={Style.fontbase }>Footer </p>
         </div>
         <div className= {Style.col}>
-            Footer
+            <p className={Style.fontbase }>Footer </p>
         </div>
+
+        
     </div>
   )
 }

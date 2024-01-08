@@ -3,7 +3,7 @@
 
 .line-globe {
     overflow: visible;
-    z-index: 5;
+
  }
  
  @keyframes digitalball {
@@ -15,15 +15,17 @@
  .globeBall {
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
-    background: var(--color-dark);
+    background: var(--color-light);
     border-radius: 50%;
-    top: calc(50% + 88px);
+    top: 35%;
     left: 0px;
+    margin-top: 109px;
     transform: translate(0%, 0%);
     position: absolute;
     overflow: hidden;
     background: transparent;
-   z-index: 1;
+    mix-blend-mode: difference;
+
     @include breakpoint(small){
         left: 35px;
     }
@@ -74,7 +76,8 @@
     transform: translate(-50%, -50%) rotate(30deg);
     animation: globe 5.4s cubic-bezier(0.35, 0, 0.65, 1) infinite;
     overflow: hidden;
-    box-shadow: inset 0px 0px 0px .125em var(--color-dark);
+    box-shadow: inset 0px 0px 0px .125em var(--color-light);
+    mix-blend-mode: difference;
  }
  
  .globe .circle {
@@ -85,17 +88,17 @@
     height: 100%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    box-shadow: inset .1em 0px 0px .08em var(--color-dark);
+    box-shadow: inset .1em 0px 0px .08em var(--color-light);
     animation: circle1 2.7s linear infinite;
     font-size: .75em;
  }
  
  @keyframes circle1 {
-    0%   {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-dark); width: 100%; }
-    49%  {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-dark); background: transparent;}
-    50%  {border-radius: 0%; width: .175em; background: var(--color-dark);}
-    51%  {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-dark); background: transparent;}
-    100% {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-dark); width: 100%;}
+    0%   {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-light); width: 100%; }
+    49%  {border-radius: 50%; box-shadow: inset .1em 0px 0px .08em var(--color-light); background: transparent;}
+    50%  {border-radius: 0%; width: .175em; background: var(--color-light);}
+    51%  {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-light); background: transparent;}
+    100% {border-radius: 50%; box-shadow: inset -.1em 0px 0px .08em var(--color-light); width: 100%;}
  }
  
  .globe :nth-child(1) {
@@ -115,7 +118,7 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 55%;
-    box-shadow: inset 0px 0px 0px .15em var(--color-dark);
+    box-shadow: inset 0px 0px 0px .15em var(--color-light);
     font-size: .75em;
  }
  
@@ -127,7 +130,7 @@
     transform: translate(-50%, -50%);
     border-radius: 0%;
     height: .15em;
-    background: var(--color-dark);
+    background: var(--color-light);
     font-size: .75em;
  }
  

@@ -1,12 +1,54 @@
+@import "@/app/styles/mixin";
+
+.container >div:nth-child(n){
+    width: 25%;
+    margin-top: -5px;
+
+    @include breakpoint(small){
+        width: 50%;
+        margin-top: -5px;
+
+
+    }
+}
 .container{
+
+ display: flex;
+ flex-wrap: wrap;
+ width: 70%;
+ margin:  0 auto;
+ 
+    img{
+       width: 100%;
+       height: auto;
+    
+        
+    }
+}
+
+.width{    
+    width: 70%;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
-    img{
-        padding: 30px;
-        width: calc( 50vw - 60px ) ;
-        height: auto;
-    }
+
+}
+.pageText{
+    padding: 30px;
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+}
+
+.pageTitle{
+    padding: 30px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
 }

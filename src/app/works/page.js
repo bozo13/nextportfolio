@@ -1,16 +1,17 @@
 "use client"
 
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 import styles from './page.module.scss'
 
-import { useTransform, useScroll, motion } from 'framer-motion';
+import { useTransform, useScroll, motion } from 'framer-motion'
 import { usePathname } from "next/navigation"
 import ShuffleText from "@/components/ShuffleText "
-import Image from 'next/image';
+import Image from 'next/image'
 import Lenis from '@studio-freight/lenis'
 import PageLanding from "@/components/PageLanding"
 import Footer from '@/components/Footer'
+import { useStyleMediaQuery } from '@/lib/useStyleMediaQuery'
 
 
 const images = [
@@ -32,8 +33,11 @@ const images = [
 export default function Page( {title, description ,text}) {
 
   const pathname = usePathname()
-  console.log(pathname);
+
   
+  const { matches: isMobile } = useStyleMediaQuery({ mixOrMax: 'max', widthOrHeight: 'width', value: 767 });
+  const { matches: imSmall } = useStyleMediaQuery({ mixOrMax: 'max', widthOrHeight: 'width', value: 400 });
+
   const gallery = useRef(null);
   const [dimension, setDimension] = useState({width:0, height:0});
 
@@ -84,37 +88,32 @@ export default function Page( {title, description ,text}) {
           <h1 > big</h1>
         </div>
       </div>
-
-
-
-      <div data-scroll data-scroll-speed= {4}>
-      <h1 > big</h1><h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1>
-      </div>
-
       <div className={styles.spacer}>      
-      <h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1>
-
-      <h1 > big</h1><h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1></div>
+        <h1 > big</h1>
+        <h1 > big</h1>
+        <h1 > big</h1>
+        <h1 > big</h1>
+      </div>
       <div ref={gallery} className={styles.gallery}>
+      {isMobile &&  <>
+        <Column images={[images[0], images[1], images[2]]} y={y}/> 
+        <Column images={[images[3], images[4], images[5]]} y={y2}/>
+
+        </>
+      }
+      {!isMobile && <>
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y4}/>
+     
+        </>
+      }
         
       </div>
-      <div className={styles.spacer}>      <h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1>
+      <div className={styles.spacer}>      
 
-      <h1 > big</h1><h1 > big</h1>
-      <h1 > big</h1>
-      <h1 > big</h1></div>
+      </div>
     <Footer />
  
     </>
