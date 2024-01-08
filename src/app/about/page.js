@@ -17,8 +17,10 @@ export default function Page() {
   const pathname = usePathname()
   const greeting = useRef(null);
   const greeting2 = useRef(null);
+  const greeting3 = useRef(null);
   const isInView = useInView(greeting)
   const isInView2 = useInView(greeting2)
+  const isInView3 = useInView(greeting3)
   
   const container = {
     hidden: { opacity: 0 ,
@@ -29,13 +31,12 @@ export default function Page() {
       transition: {
         staggerChildren: 0.25,
         delayChildren: 0.1,
-        ease: easeInOut
       }
     }
   }
   const itemA = {
-    hidden: { opacity:0,  translateX: "200px" },
-    show: {   opacity:1, translateX: "0px",
+    hidden: { opacity:0,  translateY: "30px" },
+    show: {   opacity:1, translateY: "0px",
     transition:{
       staggerChildren: 0.25,
       delayChildren: 0.1,
@@ -153,32 +154,7 @@ export default function Page() {
 
         </div>              
        
-        <div className={Style.about} >
-          <div className={Style.karrierTitle } >
-          <h1 > AbsChLüssE </h1>
-          </div>
-          <div className={Style.karrier} ref={greeting}>
-            <ul>
-              <li>
-                <p>ROK Armee<br /> 09/2003 - 09/2005</p>
-                <p>Hauptgefreite<br />
-                    aus dem Militärdienst entlassen werden</p>
-              </li>
-              <li>
-                <p>Universität Hoseo <br />02/2001 - 01/2002</p>
-                <p>Verlassen der Universität<br />
-                    Wirtschaft und der internationale Handel</p>
-              </li>
-              <li>
-                <p>Chung Am High School <br />02/2000</p>
-                <p>Abschließen</p>
-              </li>
-         
-            </ul>
-            
-          </div>
-
-        </div>              
+          
        
 
         <Footer/>
