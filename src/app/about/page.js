@@ -14,6 +14,8 @@ import { KHInterferenceTRIAL, KHTekaTRIALLight } from '@/lib/fonts';
 import Stripe from '../../../public/stripe-box.svg'
 import Smile from '../../../public/smile.svg'
 import JJ from '../../../public/JJ.svg'
+import JJSmall from '../../../public/JJ-small.svg'
+import Seoul from '../../../public/seoul.svg'
 
 
 export default function Page() {
@@ -21,9 +23,13 @@ export default function Page() {
   const greeting = useRef(null);
   const greeting2 = useRef(null);
   const greeting3 = useRef(null);
+  const greeting4 = useRef(null);
+  const greeting5 = useRef(null);
   const isInView = useInView(greeting)
   const isInView2 = useInView(greeting2)
   const isInView3 = useInView(greeting3)
+  const isInView4 = useInView(greeting4)
+  const isInView5 = useInView(greeting5)
   
   const container = {
     hidden: { opacity: 0 ,
@@ -206,6 +212,77 @@ export default function Page() {
                  priority
                  src={JJ}
                  alt="JJ"/>
+              </div>
+
+
+              <motion.div className={Style.about} >
+          <div className={Style.karrierTitle } >
+            <h1 >  sprachen</h1> 
+          </div>
+
+          <motion.div className={Style.karrier} ref={greeting4} >
+            <motion.ul variants= {container} 
+                  animate={isInView4 ? "show" : "hidden"}  
+                  initial="hidden"
+              >
+              <motion.li variants={itemA}>
+                <p>ROK Armee<br /> 09/2003 - 09/2005</p>
+                <p>Hauptgefreite<br />
+                    aus dem Militärdienst entlassen werden</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Universität Hoseo <br />02/2001 - 01/2002</p>
+                <p>Verlassen der Universität<br />
+                    Wirtschaft und der internationale Handel</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Chung Am High School <br />02/2000</p>
+                <p>Abschließen</p>
+              </motion.li>
+            </motion.ul>
+            </motion.div>
+            </motion.div>
+
+            <motion.div className={Style.about} >
+          <div className={Style.karrierTitle } >
+            <h1 > FÄHIGKEITEN</h1> 
+          </div>
+ 
+          <motion.div className={Style.karrier} ref={greeting5} >
+            <motion.ul variants= {container} 
+                  animate={isInView5 ? "show" : "hidden"}  
+                  initial="hidden"
+              >
+              <motion.li variants={itemA}>
+                <p>ROK Armee<br /> 09/2003 - 09/2005</p>
+                <p>Hauptgefreite<br />
+                    aus dem Militärdienst entlassen werden</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Universität Hoseo <br />02/2001 - 01/2002</p>
+                <p>Verlassen der Universität<br />
+                    Wirtschaft und der internationale Handel</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Chung Am High School <br />02/2000</p>
+                <p>Abschließen</p>
+              </motion.li>
+            </motion.ul>
+            </motion.div>
+            </motion.div>
+
+
+            <div className={Style.Stripes}>
+                <Image 
+                 priority
+                 src={Seoul}
+                 alt="seoul"/>
+              </div>
+              <div className={Style.Stripes}>
+                <Image 
+                 priority
+                 src={JJSmall}
+                 alt="small letter JJ"/>
               </div>
         <Footer/>
       </>
