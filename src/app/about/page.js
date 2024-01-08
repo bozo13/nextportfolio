@@ -154,7 +154,35 @@ export default function Page() {
 
         </div>              
        
-          
+        <motion.div className={Style.about} >
+          <div className={Style.karrierTitle } >
+            <h1 > AbsChLüssE </h1>
+          </div>
+
+          <motion.div className={Style.karrier} ref={greeting3} >
+            <motion.ul variants= {container} 
+                  animate={isInView2 ? "show" : "hidden"}  
+                  initial="hidden"
+              >
+              <motion.li variants={itemA}>
+                <p>ROK Armee<br /> 09/2003 - 09/2005</p>
+                <p>Hauptgefreite<br />
+                    aus dem Militärdienst entlassen werden</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Universität Hoseo <br />02/2001 - 01/2002</p>
+                <p>Verlassen der Universität<br />
+                    Wirtschaft und der internationale Handel</p>
+              </motion.li>
+              <motion.li variants={itemA}>
+                <p>Chung Am High School <br />02/2000</p>
+                <p>Abschließen</p>
+              </motion.li>
+            </motion.ul>
+            </motion.div>
+     
+
+        </motion.div>              
        
 
         <Footer/>

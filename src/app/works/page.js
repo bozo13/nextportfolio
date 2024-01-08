@@ -62,13 +62,18 @@ export default function Page( {title, description ,text}) {
     const resize = () => {
       setDimension({width: window.innerWidth, height: window.innerHeight})
     }
-
+    if(typeof window !== 'undefined')
+    {
     window.addEventListener("resize", resize)
     requestAnimationFrame(raf);
     resize();
+    }
 
     return () => {
+      if(typeof window !== 'undefined')
+{
       window.removeEventListener("resize", resize);
+}
     }
   }, [])
 
