@@ -11,6 +11,7 @@
   "dependencies": {
     "@studio-freight/hamo": "^0.6.22",
     "@studio-freight/lenis": "^1.0.28",
+    "classnames": "^2.5.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "framer-motion": "^10.13.0",
@@ -20,7 +21,7 @@
     "next": "13.4.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "sass": "^1.64.0",
     "zustand": "^4.4.6"
   }

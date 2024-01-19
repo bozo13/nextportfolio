@@ -11,6 +11,8 @@ import Image from 'next/image'
 import Lenis from '@studio-freight/lenis'
 import PageLanding from "@/components/PageLanding"
 import Footer from '@/components/Footer'
+import { PageWrapper } from '@/components/PageWrapper'
+import { Container } from '@/components/Container'
 //import { useStyleMediaQuery } from '@/lib/useStyleMediaQuery'
 
 
@@ -37,6 +39,12 @@ export default function Page( {title, description ,text}) {
   
   //const { matches: isMobile } = useStyleMediaQuery({ mixOrMax: 'max', widthOrHeight: 'width', value: 767 });
   //const { matches: imSmall } = useStyleMediaQuery({ mixOrMax: 'max', widthOrHeight: 'width', value: 400 });
+
+  const shorttext = [
+    " all i worked that \n",
+    "designs and develops unique brand identities \n",
+    " and tailor-made digital solutions"
+  ]
 
   const gallery = useRef(null);
   const [dimension, setDimension] = useState({width:0, height:0});
@@ -76,8 +84,9 @@ export default function Page( {title, description ,text}) {
    <>
      
 
-      <PageLanding title ={pathname} description={"all i worked"} link={pathname}/>
-      
+      <PageLanding title ={pathname} description={shorttext} link={pathname}/>
+      <Container>
+ 
       
       <div className={styles.section} data-scroll-section>
         <div  data-scroll        
@@ -103,12 +112,13 @@ export default function Page( {title, description ,text}) {
      
         
       </div>
-      <div className={styles.spacer}>      
+      <div className= "spacer" />
 
-      </div>
+      </Container>
     <Footer />
- 
+
     </>
+    
   )
 }
 

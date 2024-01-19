@@ -16,6 +16,7 @@
     --color-text-light: #FFF;
     --alert-error: #ff4444;
     --alert-success: #24C958;
+    
     --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
     --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
     --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
@@ -25,6 +26,14 @@
     --gap-padding: clamp(1.5em, 4vw, 2.5em);
     --font-base: '--KH-Inter';
     --font-text:'--KH-Teka';
+
+    --animation-primary: 0.3s cubic-bezier(.5, 0, 0, 1);
+    --columns: 3;
+  
+    --row-gap: 1.25em;
+    --col-gap: 1.25em;
+    --title-size: clamp(5em, calc(3vw + 7.75vh), 7.5em);
+    --gap: var(--col-gap);
 
     --s: 100px; /* control the size */
     --counter_s: 180px; 
@@ -45,7 +54,12 @@ body{
     padding: 0;
     overflow: hidden;
     cursor: wait;
-    background: var(--color-light);
+    background: var(--color-lightgray);
+}
+.bg-white{
+  background: var(--color-lightgray);
+  width: 100%;
+  height: auto;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -60,6 +74,21 @@ a{
     font-family: var(--font-base);
 }
 
+.mx-12	{ margin-left: 3rem; /* 48px */
+        margin-right: 3rem; /* 48px */
+}
+.min-h-screen	{min-height: 100vh;}
+
+.min-h-screenHeightWithoutHeader { min-height:calc(100vh - 101px)}
+.spacer {
+  height: 50vh;
+}
+.spacer-s {
+  height: 25vh;
+}
+.spacer-xs {
+  height: 15vh;
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -93,3 +122,8 @@ a{
   .uppercase{
     text-transform: uppercase;
   }
+
+
+
+
+

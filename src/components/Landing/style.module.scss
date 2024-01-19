@@ -5,14 +5,21 @@
     overflow: hidden;
 
     font-family: var(--font-base);
-    background: 
-    /*
-      conic-gradient(from 90deg at 2px 2px,var(--_g))
-      0 0/var(--s) var(--s),
-     */ 
-      conic-gradient(from 90deg at 0.5px 0.5px,var(--_g))
-      0 0/calc(var(--s)/10) calc(var(--s)/10);
 
+
+    .backgroundGrid{
+      position: fixed;
+      background: 
+      /*
+        conic-gradient(from 90deg at 2px 2px,var(--_g))
+        0 0/var(--s) var(--s),
+       */ 
+        conic-gradient(from 90deg at 0.5px 0.5px,var(--_g))
+        0 0/calc(var(--s)/10) calc(var(--s)/10);
+      width: 100%;
+      height: inherit;
+      z-index: -1;
+    }
     img{
       object-fit: cover;
     }

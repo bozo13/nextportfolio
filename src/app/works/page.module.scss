@@ -19,7 +19,7 @@
         gap: 2vw;
         @include breakpoint(small){
             min-width: 50%;
-           
+            
         }    
         .imageContainer{
             height: 100%;
@@ -45,9 +45,7 @@
         }
     }
 }
-.spacer{
-    height: 50vh;
-}
+
 .section{
     height: 50vh;
 }

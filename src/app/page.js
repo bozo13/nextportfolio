@@ -7,6 +7,7 @@ import Projects from '@/components/Projects';
 import Description from '@/components/Description';
 import SlidingImages from '@/components/SlidingImages';
 import Contact from '@/components/Contact';
+import { Container } from '@/components/Container';
 
 
 export default function Home(  ) {
@@ -15,13 +16,18 @@ export default function Home(  ) {
 
 
   return (
-    <>
+  <>
       <Landing />   
-      <Globe /> 
-      <Description />
-      <Projects />
-      <SlidingImages />
-      <Contact />
+      <Container>
+        <div className='spacer-xs'/>
+        <Globe /> 
+        <Description />
+        <Projects />
+        <SlidingImages />
+        <div className='spacer-s'/>
+
+        <Contact />
+    </Container>
     </>
   )
 }

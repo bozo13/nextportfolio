@@ -10,6 +10,7 @@ export default function PageLanding({title, description, link}) {
 
   return (
     <div className={styles.landing}  data-scroll-container>
+      <div className={styles.background}/>
       <div data-scroll data-scroll-speed={0.2} className={styles.title}>
         <ShuffleText shuffletext={title} link={link} className={styles.title} />
       </div>
@@ -25,6 +26,4 @@ export default function PageLanding({title, description, link}) {
 
   )
 }
-/*
-
-*/  
+ 

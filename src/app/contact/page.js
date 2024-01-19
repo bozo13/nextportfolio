@@ -1,13 +1,14 @@
 "use client"
-import ShuffleText from "@/components/ShuffleText "
-import PixelatedImage from '@/components/Pixelated'
-import { usePathname } from 'next/navigation'
-import PageLanding from '@/components/PageLanding'
-import Style from './style.module.scss'
-import { useRef } from 'react'
-import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
-import Footer from '@/components/Footer'
 import Clock from '@/components/Clock'
+import { Container } from "@/components/Container"
+import Footer from '@/components/Footer'
+import PageLanding from '@/components/PageLanding'
+import PixelatedImage from '@/components/Pixelated'
+import ShuffleText from "@/components/ShuffleText "
+import { useScroll, useTransform } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { useRef } from 'react'
+import Style from './style.module.scss'
 
 export default function Page(  ) {
 
@@ -22,12 +23,19 @@ export default function Page(  ) {
   const x = useTransform(scrollYProgress, [0, 1], [0, 100])
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
   const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
-  
+  const description =  ['For any enquiries, ',
+                        '\n',
+                        'or just to say hello',
+                        '\n',
+                        'get in touch and contact us.']
+
     return (
-  
+
+
       <main style={{y}} ref={container} data-scroll-container>
  
-        <PageLanding title ={pathname} description={"all i worked"} link= {titlelink}/>
+        <PageLanding title ={pathname} description={description} link= {titlelink}/>
+        <Container>
         <div className={Style.width}> 
           <div className={Style.pageTitle}> 
           <Clock tiz={now.getTime()} />
@@ -54,9 +62,11 @@ export default function Page(  ) {
           }
  
         </div>  
-     
+        <div className= 'spacer'/>
+        </Container>
          <Footer />
         </main>
+
+
       )
   }
-   
