@@ -65,7 +65,7 @@ export default function Page(  ) {
          
             </div>
             <div className={Style.absolutePhoto} data-scroll data-scroll-speed={1}>
-              <PixelatedImage src={`/images/pixelated/5.png`} src10={`/images/pixelated/5_small.png`}/>
+              <PixelatedImage src={`/images/pixelated/7.png`} src10={`/images/pixelated/7_small.png`}/>
             </div>
           </Container>
           <Footer />
