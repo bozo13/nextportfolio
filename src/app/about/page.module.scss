@@ -25,7 +25,7 @@
         margin-left: 1em;
     }
      @include breakpoint(small){
-     
+     width: 100%;
     }
 
 
@@ -68,11 +68,8 @@
       
         @include breakpoint(small){
             margin: 50px 0px;
-            width: auto; 
-          
-            
-    
-            }
+            width: 100% 
+           }
 
         svg{
             width: 30px;
@@ -146,8 +143,10 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    
-
+    flex-direction: row;
+    @include breakpoint(small){
+        width: 100%;
+      }
 }
 .faehigkeitenBox{
     position: relative;
@@ -156,10 +155,11 @@
     margin-right: 1em;
    
     h1{
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
     h3{
-        font-family: var(--font-text);
+        font-family: var(--font-base);
+        font-size: 1em;
     }
 
    }
@@ -178,4 +178,21 @@
 .languageelement{
     font-family: var(--font-base);
 
+}
+.BackToTopButton {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 25vh;
+  
+    button {
+        border: 0;
+        padding: 30px 100px ;
+        font-family: var(--font-text);
+        color: var(--color-light);
+        background-color: var(--color-dark);
+        cursor: pointer;
+
+    }
 }

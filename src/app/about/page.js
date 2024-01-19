@@ -9,6 +9,8 @@ import { MaskText } from '@/components/MaskedText';
 import { MaskList } from '@/components/MaskedList';
 import Quote from "@/components/quote";
 import BackToTopButton from "@/components/BacktoTop"
+import { Faehigkeiten } from '@/components/Faehigkeiten';
+import { Sprache } from '@/components/Sprache';
 
 const phrases = [
     "Mein Name ist Jong-ok Jeon und Ich bin eine talentierte und erfahrene Grafikdesigner und Frontend-Entwickler. mit umfassenden Kenntnissen in Adobe Design-Programmen sowie JavaScript, HTML, SASS, ReactJS mit GatsbyJS und NextJS. ",
@@ -105,6 +107,31 @@ const abschlusseData =[
   }
 ]
 
+const faehigkeitenlist = [
+  {
+    name: "Adobe Creative Suite \n Illustrator / Photoshop / Indesign",
+    explain: "Grafik Programm ",
+  },
+  {
+    name: "HTML / CSS / Javascript Frameworks \n ReactJS (including GatsbyJS, NextJS)",
+    explain: "web development ",
+  },
+  {
+    name: "adobe XD / Figma ",
+    explain: "as a prototyping tool",
+  },
+]
+const sprachelist = [
+  {
+    name: "Koreanische",
+    explain: "Muttersprache",
+  },
+  {
+    name: "Deutsche",
+    explain: "Mittelstufe B2",
+  },
+ 
+]
 
 export default function Page() {
     const pathname = usePathname()
@@ -125,9 +152,10 @@ export default function Page() {
           <div className={Style.about} >
           <div className='spacer-xs'/>
             <div className={Style.karrierTitle }  data-scroll data-scroll-speed={0.1}>
-         
+              <div className='flex'>
               <h1 >Greeting  </h1>
               <Quote />
+              </div>
             </div>
           </div>
 
@@ -147,8 +175,10 @@ export default function Page() {
           <div className={Style.about} >
           <div className='spacer-xs'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
+            <div className='flex'>
                 <h1 >KARRIERE</h1>
                 <Quote />
+              </div>
               </div>
           </div>
            
@@ -165,8 +195,10 @@ export default function Page() {
           <div className={Style.about} >
           <div className='spacer-xs'/>
             <div className={Style.karrierTitle  } data-scroll data-scroll-speed={0.1}>
+            <div className='flex'>
                 <h1 >Abschlüsse  </h1>
                 <Quote />
+                </div>
               </div>
           </div>
            
@@ -179,76 +211,48 @@ export default function Page() {
 
       </Container>
 
+     
       <Container className={Style.container} >
           <div className={Style.about} >
-          <div className='spacer-xs'/>
+       
             <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
+            <div className='flex'>
+              
             <h1 > FÄHIGKEITEN</h1> 
                 <Quote />
               </div>
+              </div>
           </div>
             <div className={Style.faehigkeiten}>
+            <div className='spacer-s'/>
+            <Faehigkeiten faehigkeitenlist={faehigkeitenlist} />
            
-              <div className={Style.faehigkeitenBox}> 
-                <h1 >
-                  01
-                </h1>
-                <h3>  Adobe Creative Suite<br/>Illustrator / Photoshop / Indesign</h3>
-                <p> Grafik Programm </p>
-              </div>
-              <div className={Style.faehigkeitenBox}> 
-                <h1 >
-                  02
-                </h1>
-                <h3> HTML / CSS / Javascript Frameworks <br/>
-                    ReactJS (including GatsbyJS, NextJS) </h3>
-                <p> web development</p>
-              </div>
-              <div className={Style.faehigkeitenBox}> 
-                <h1 >
-                  03
-                </h1>
-                <h3> adobe XD / Figma <br/> <br/> </h3>
-                <p> as a prototyping tool</p>
-              </div>
             </div>
-            
-
       </Container>
-
       <Container className={Style.container} >
           <div className={Style.about} >
-          <div className='spacer-xs'/>
+   
             <div className={Style.karrierTitle } data-scroll data-scroll-speed={0.1}>
-                <h1 > sprache </h1>
+            <div className='flex'>
+            <h1 > SPRACHE</h1> 
                 <Quote />
+                </div>
               </div>
           </div>
+            <div className={Style.faehigkeiten}>
+                   <div className='spacer-s'/>
+            <Sprache sprachelist={sprachelist} />
            
-            <div className={Style.greeting}>
-            <div className='spacer-xs'/>
-             <div className={Style.language}>
-           
-                <div className={Style.languageBox}>
-                  <h3 className={Style.languageelement}>Koreanische</h3>
-                  <p>Muttersprache</p> 
-                </div>
-
-                <div className={Style.languageBox}>
-                  <h3 className={Style.languageelement}>Deutsch</h3>
-                  <p>Mittelstufe B2</p> 
-                </div>
-               
-              </div>
-               
-            
             </div>
-     
-     
       </Container>
+
+      
       <Container className={Style.container} >
-        <div className='spacer'/>
+      <div className='spacer-xs'/>
+
+        <div className={Style.BackToTopButton}>
         <BackToTopButton />
+        </div>
       </Container>
 
       <Footer/>

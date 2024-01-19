@@ -1,4 +1,3 @@
-
 :root {
     --color-dark: #1C1D20;
     --color-dark-dark: #141517;
@@ -66,7 +65,9 @@ h1,h2,h3,h4,h5,h6{
   font-family: var(--font-base);
 }
 
-
+.flex{
+  display: flex;
+}
 a{
     text-decoration: none;
     color: white;
@@ -82,6 +83,7 @@ a{
 .min-h-screenHeightWithoutHeader { min-height:calc(100vh - 101px)}
 .spacer {
   height: 50vh;
+  
 }
 .spacer-s {
   height: 25vh;
@@ -93,6 +95,16 @@ a{
 @media only screen and (max-width: 600px) {
     body {
         overflow: auto;
+    }
+    .spacer {
+      height: 10vh;
+      
+    }
+    .spacer-s {
+      height: 5vh;
+    }
+    .spacer-xs {
+      height: 3vh;
     }
   }
 
