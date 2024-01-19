@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Style from './Style.module.scss'
 
-export default function index(tiz) {
-    const [time, setTime] = useState( new Date(tiz))
+export default function index(timeNow) {
+    const [time, setTime] = useState( new Date(timeNow))
 
     useEffect(()=> {
     const timer = setInterval(() => {

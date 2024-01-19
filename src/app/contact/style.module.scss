@@ -1,54 +1,84 @@
 @import "@/app/styles/mixin";
 
-.container >div:nth-child(n){
-    width: 25%;
-    margin-top: -5px;
-
-    @include breakpoint(small){
-        width: 50%;
-        margin-top: -5px;
-
-
-    }
-}
 .container{
-
- display: flex;
- flex-wrap: wrap;
- width: 70%;
- margin:  0 auto;
- 
-    img{
-       width: 100%;
-       height: auto;
-    
-        
+    width: 100%;
+    height: 65vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    gap: var(--gap);
+    @include breakpoint(small){
+        flex-direction: column;
+        height: 65vh;
     }
 }
 
-.width{    
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-}
-.pageText{
-    padding: 30px;
-    width: 70%;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-
+.spacer{
+    min-height: 35vh;
 }
 
-.pageTitle{
-    padding: 30px;
-    width: 30%;
+.SidePhoto{
+    max-width: 30%;
+    height: auto;
+}
+.sidephotoScale{
+    max-width: 30%;
+    height: auto;
+    z-index: -1;
+}
+.contactTitle{
+    display: flex;
+    h1{
+        font-size: 8rem;
+        font-weight: light;
+        width: auto;
+        margin: 0;
+        @include breakpoint(small){
+            font-size: 2.5rem;
+        }
+    }
+    svg{
+        width: 30px;
+        height: 18px;
+    }
+}
+.ContactDetails{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-end;
 
+    h2{
+        font-size: 1em;
+    }
+    p{
+        font-size: 1em;
+        font-family: var(--font-text);
+        font-weight: light;
+        padding: 0.5em 0;
+    }
+    a{
+        color: var(--color-dark);
+        padding: 0.5em 0;
+    }
+}
+.contact, .Content{
+    width: 100%;
+    z-index: 1;
+    @include breakpoint(small){
+        width: 100%;
+    }
+}
+
+.Clock{
+    width: auto;
+}
+.absolutePhoto{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 30%;
+    height: auto;
+    right: 0;
+    bottom: 0;
 }
